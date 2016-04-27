@@ -6,3 +6,9 @@ function setUpPage () {
   // you can (but probably shouldn't) define functions inside this function
 
 };
+
+function changeSquare() {
+  var square = document.getElementById("board-tile");
+  square.innerHTML("X");
+  title.setAttribute("style", "color: blue");
+}
