@@ -34,6 +34,8 @@ keep track of player scores, but consider that a feature for later.
 1. Use `addEventListener` rather than defining an inline `onclick`.
 2. The HTML you have now should be sufficient for all your JS and CSS needs.
 3. No jQuery, please.
+4. Use the provided `setUpPage` function to add event listeners and so on at
+   page load.
 4. Your game should be up on GitHub pages and easily accessible.
 
 ## Reflection Questions (be prepared to discuss tomorrow) 
@@ -58,3 +60,5 @@ keep track of player scores, but consider that a feature for later.
    board; make that solution more elegant and flexible. Then reflect on whether
    the added elegance makes the new solution better, and if so, in what ways
    might it be better?
+4. Make the game log work; each time a game is finished, a new `li` should be
+   added to the end of the list with the outcome of the game.

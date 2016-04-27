@@ -14,8 +14,10 @@
     </div>
 
     <div class="player-scores-container">
-      <p class="score">Player X Score: <span id="x-score">0</span></p>
-      <p class="score">Player O Score: <span id="o-score">0</span></p>
+      <!-- scores a dummy scores for output display purposes, rather than the
+      actual starting scores -->
+      <p class="score">Player X Score: <span id="x-score">3</span></p>
+      <p class="score">Player O Score: <span id="o-score">2</span></p>
     </div>
 
     <div class="message-container">
@@ -57,6 +59,21 @@
           <td class="board-tile row-3 col-3" id="tile-3-3">6</td>
         </tr>
       </table>
+    </div>
+    <!-- save the game log feature for last -->
+    <div class="game-log-container">
+      <h2 class="game-log-header">Game Log</h2>
+      <ol class="game-log-list" id="game-log">
+        <!-- dummy data -->
+        <li class="game-log-item">Player X won.</li>
+        <li class="game-log-item">Player X won.</li>
+        <li class="game-log-item">Cat's game (tie)</li>
+        <li class="game-log-item">Player X won.</li>
+        <li class="game-log-item">Cat's game (tie)</li>
+        <li class="game-log-item">Player O won</li>
+        <li class="game-log-item">Cat's game (tie)</li>
+        <li class="game-log-item">Player O won</li>
+      </ol>
     </div>
   </div>
 </body>
