@@ -31,7 +31,7 @@ window.addEventListener("load", function() {
     }
       moveCounter++;
 
-    if(moveCounter >= 5) {
+    if(moveCounter > 4) {
       checkWinner();
     }
   }
@@ -59,13 +59,13 @@ function checkWinner(){
   var tile33=document.getElementById("tile-3-3").innerHTML;
 
   if((tile11 === "X" && tile12 === "X" && tile13 === "X") ||
-    (tile21 === "X" && tile22 === "X" && tile23 === "X") ||
-    (tile31 === "X" && tile32 === "X" && tile33 === "X") ||
-    (tile11 === "X" && tile21 === "X" && tile31 === "X") ||
-    (tile12 === "X" && tile22 === "X" && tile32 === "X") ||
-    (tile31 === "X" && tile32 === "X" && tile33 === "X") ||
-    (tile11 === "X" && tile22 === "X" && tile33 === "X") ||
-    (tile31 === "X" && tile22 === "X" && tile13 === "X")){
+     (tile21 === "X" && tile22 === "X" && tile23 === "X") ||
+     (tile31 === "X" && tile32 === "X" && tile33 === "X") ||
+     (tile11 === "X" && tile21 === "X" && tile31 === "X") ||
+     (tile12 === "X" && tile22 === "X" && tile32 === "X") ||
+     (tile13 === "X" && tile23 === "X" && tile33 === "X") ||
+     (tile11 === "X" && tile22 === "X" && tile33 === "X") ||
+     (tile31 === "X" && tile22 === "X" && tile13 === "X")){
     winner = "X";
     alert("Winner X");
   }else if((tile11 === "O" && tile12 === "O" && tile13 === "O") ||
@@ -73,7 +73,7 @@ function checkWinner(){
     (tile31 === "O" && tile32 === "O" && tile33 === "O") ||
     (tile11 === "O" && tile21 === "O" && tile31 === "O") ||
     (tile12 === "O" && tile22 === "O" && tile32 === "O") ||
-    (tile31 === "O" && tile32 === "O" && tile33 === "O") ||
+    (tile13 === "O" && tile23 === "O" && tile33 === "O") ||
     (tile11 === "O" && tile22 === "O" && tile33 === "O") ||
     (tile31 === "O" && tile22 === "O" && tile13 === "O")){
     winner = "O";
