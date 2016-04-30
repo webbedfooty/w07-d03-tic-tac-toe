@@ -9,12 +9,13 @@ window.addEventListener("load", function() {
   var playerTurn = "X";
   var moveCounter = 0;
   var totalMoves = 9;
-  var catScore = 0;
+  var xScore = 0;
+  var oScore = 0;
+  var cScore = 0;
   var winner;
-  var cScore = document.getElementById("c-score")
 
   function changePlayerTurn() {
-    if (playerTurn === "X"){
+    if(playerTurn === "X"){
       elementX = document.getElementById("player-x-ready");
       elementX.setAttribute("class", "hidden");
       elementO = document.getElementById("player-o-ready");
@@ -37,7 +38,7 @@ window.addEventListener("load", function() {
   }
 
   function changeSquare() {
-    if (playerTurn === "X"){
+    if(playerTurn === "X"){
         this.innerHTML="X";
         this.removeEventListener("click", changeSquare);
 
@@ -66,8 +67,15 @@ function checkWinner(){
      (tile13 === "X" && tile23 === "X" && tile33 === "X") ||
      (tile11 === "X" && tile22 === "X" && tile33 === "X") ||
      (tile31 === "X" && tile22 === "X" && tile13 === "X")){
-    winner = "X";
-    alert("Winner X");
+    elX = document.getElementById("player-x-wins");
+    elX.setAttribute("class", "visible");
+    elementX = document.getElementById("player-x-ready");
+    elementX.setAttribute("class", "hidden");
+    xScore++;
+    scoreX = document.getElementById("x-score");
+    scoreX.innerHTML=xScore;
+    // alert("Player X Wins!");
+    endGame();
   }else if((tile11 === "O" && tile12 === "O" && tile13 === "O") ||
     (tile21 === "O" && tile22 === "O" && tile23 === "O") ||
     (tile31 === "O" && tile32 === "O" && tile33 === "O") ||
@@ -76,13 +84,36 @@ function checkWinner(){
     (tile13 === "O" && tile23 === "O" && tile33 === "O") ||
     (tile11 === "O" && tile22 === "O" && tile33 === "O") ||
     (tile31 === "O" && tile22 === "O" && tile13 === "O")){
-    winner = "O";
-    alert("Winner O");
-  }
-  else if((moveCounter === 9) && (winner === undefined)){
-    alert("Cat wins this game!");
+    elO = document.getElementById("player-o-wins");
+    elO.setAttribute("class", "visible");
+    elementO = document.getElementById("player-o-ready");
+    elementO.setAttribute("class", "hidden");
+    oScore++;
+    scoreO = document.getElementById("o-score");
+    scoreO.innerHTML=oScore;
+    // alert("Player O Wins!");
+    endGame();
+  }else if((moveCounter === 9) && (winner === undefined)){
+    elC = document.getElementById("tie-game");
+    elC.setAttribute("class", "visible");
     cScore++;
- }
+    scoreC = document.getElementById("c-score");
+    scoreC.innerHTML=cScore;
+    // alert("Cat wins this game!");
+    endGame();
+  }
 }
 
+function endGame(){
+  elementX = document.getElementById("player-x-ready");
+  elementX.setAttribute("class", "hidden");
+  elementO = document.getElementById("player-o-ready");
+  elementO.setAttribute("class", "hidden");
+    for(var i = 0; i < squares.length; i++){
+      squares[i].removeEventListener("click", changeSquare);
+      squares[i].removeEventListener("click", changePlayerTurn);
+    }
+
+
+}
 });
