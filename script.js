@@ -91,7 +91,7 @@ function checkWinner(){
     endGame();
 // adds an entry to the running Game Log
     var para = document.createElement("li");
-    var node = document.createTextNode("PLAYER x WINS!");
+    var node = document.createTextNode("PLAYER X WINS!");
     para.appendChild(node);
     var element = document.getElementById("game-log");
     element.appendChild(para);

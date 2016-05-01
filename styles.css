@@ -1,12 +1,19 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900);
 
 .body {
-  background:#29213E;
+  background-color: color:#29213E;
   color:#B1B7DA;
   font-family: 'Orbitron', sans-serif;
 }
 
 .header {
+  background:#29213E;
+  color:#B1B7DA;
+  font-family: 'Orbitron', sans-serif;
+  font-size:20px;
+}
+
+.reset-container {
   background:#29213E;
   color:#B1B7DA;
   font-family: 'Orbitron', sans-serif;
@@ -16,9 +23,22 @@
   background:#29213E;
   color:#B1B7DA;
   font-family: 'Orbitron', sans-serif;
+  font-size:20px;
 }
 
 .board-container {
+  background:#29213E;
+  color:#B1B7DA;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.game-log-container {
+  background:#29213E;
+  color:#B1B7DA;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.player-scores-container{
   background:#29213E;
   color:#B1B7DA;
   font-family: 'Orbitron', sans-serif;
@@ -44,14 +64,39 @@
   font-family: 'Orbitron', sans-serif;
 }
 
-th, td, tr {
-  background:#29213E;
-  color:#B1B7DA;
+.board-tile {
   font-family: 'Orbitron', sans-serif;
   font-size:70px;
   height: 80px;
   width: 80px;
-  border: 10px solid #B1B7DA;
-  padding: 7px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+
+.row-2 {
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: thick;
+  font-family: 'Orbitron', sans-serif;
+  font-size:70px;
+  height: 80px;
+  width: 80px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+
+
+.col-2 {
+  border-right-style: solid;
+  border-left-style: solid;
+  border-width: thick;
+  font-family: 'Orbitron', sans-serif;
+  font-size:70px;
+  height: 80px;
+  width: 80px;
   text-align: center;
 }
