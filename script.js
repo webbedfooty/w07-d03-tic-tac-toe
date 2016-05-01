@@ -86,12 +86,12 @@ function checkWinner(){
     xScore++;
     scoreX = document.getElementById("x-score");
     scoreX.innerHTML=xScore;
-    alert("Player X Wins!");
+    alert("PLAYER X WINS!");
 // launches endGame process
     endGame();
 // adds an entry to the running Game Log
     var para = document.createElement("li");
-    var node = document.createTextNode("Player X Wins!");
+    var node = document.createTextNode("PLAYER x WINS!");
     para.appendChild(node);
     var element = document.getElementById("game-log");
     element.appendChild(para);
@@ -113,12 +113,12 @@ function checkWinner(){
     oScore++;
     scoreO = document.getElementById("o-score");
     scoreO.innerHTML=oScore;
-    alert("Player O Wins!");
+    alert("PLAYER O WINS!");
 // launches endGame process
     endGame();
 // adds an entry to the running Game Log
     var para = document.createElement("li");
-    var node = document.createTextNode("Player O Wins!");
+    var node = document.createTextNode("PLAYER O WINS!");
     para.appendChild(node);
     var element = document.getElementById("game-log");
     element.appendChild(para);
@@ -131,12 +131,12 @@ function checkWinner(){
     cScore++;
     scoreC = document.getElementById("c-score");
     scoreC.innerHTML=cScore;
-    alert("Cat wins this game!");
+    alert("STALEMATE");
 // launches endGame process
     endGame();
 // adds an entry to the running Game Log
     var para = document.createElement("li");
-    var node = document.createTextNode("Cat Wins!");
+    var node = document.createTextNode("STALEMATE.");
     para.appendChild(node);
     var element = document.getElementById("game-log");
     element.appendChild(para);

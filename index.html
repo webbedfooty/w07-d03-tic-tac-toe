@@ -10,39 +10,36 @@
   <audio src="http://www.moviesoundscentral.com/sounds/playgames.wav" autoplay>
     Your browser does not support the <code>audio</code> element.
   </audio>
+<header>
+  <h1>GLOBAL THERMONUCLEAR TIC TAC TOE</h1>
+</header>
 
-  <div class="container">
-    <h1>Tic Tac Toe</h1>
 
     <div class="reset-container">
-      <a href="#" class="reset-button" id="reset-button">Reset</a>
+      <a href="#" class="reset-button" id="reset-button">GAME RESET</a>
     </div>
 
-    <div class="player-scores-container">
-      <p class="score">Player X Score: <span id="x-score">0</span></p>
-      <p class="score">Player O Score: <span id="o-score">0</span></p>
-      <p class="score">Cat's    Score: <span id="c-score">0</span></p>
-    </div>
+
 
     <div class="message-container">
       <div id="player-x-ready" class="visible">
-        <p class="ready-message">Player X, it's your move!</p>
+        <p class="ready-message">PLAYER X, IT'S YOUR MOVE!</p>
       </div>
       <div id="player-o-ready" class="hidden">
-        <p class="ready-message">Player O, it's your move!</p>
+        <p class="ready-message">PLAYER O, IT'S YOUR MOVE!</p>
       </div>
 
       <div id="player-x-wins" class="hidden">
-        <p class="outcome-message">Player X wins!</p>
-        <p class="new-game" id="new-game-prompt">Play again?</p>
+        <p class="outcome-message">PLAYER X WINS!</p>
+        <p class="new-game" id="new-game-prompt">WANT TO PLAY AGAIN?</p>
       </div>
       <div id="player-o-wins" class="hidden">
-        <p class="outcome-message">Player O wins!</p>
-        <p class="new-game" id="new-game-prompt">Play again?</p>
+        <p class="outcome-message">PLAYER O WINS!</p>
+        <p class="new-game" id="new-game-prompt">WANT TO PLAY AGAIN?</p>
       </div>
       <div id="tie-game" class="hidden">
-        <p class="outcome-message">Cat's game! Nobody wins!</p>
-        <p class="new-game" id="new-game-prompt">Play again?</p>
+        <p class="outcome-message">STALEMATE.</p>
+        <p class="new-game" id="new-game-prompt">WANT TO PLAY AGAIN?</p>
       </div>
     </div>
 
@@ -67,11 +64,20 @@
     </div>
 
     <div class="game-log-container">
-      <h2 class="game-log-header">Game Log</h2>
+      <h2 class="game-log-header">OUTCOMES</h2>
       <ol class="game-log-list" id="game-log">
 
       </ol>
     </div>
   </div>
+
+<!-->       Score totals       </!-->
+<footer>
+  <div class="player-scores-container">
+    <p class="score">PLAYER X SCORE: <span id="x-score">0</span></p>
+    <p class="score">PLAYER O SCORE: <span id="o-score">0</span></p>
+    <p class="score">STALEMATES: <span id="c-score">0</span></p>
+  </div>
+</footer>
 </body>
 </html>
