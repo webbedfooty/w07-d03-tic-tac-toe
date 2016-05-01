@@ -1,23 +1,42 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900);
 
-.body{
-background:#29213E;
-color:#B1B7DA;
+.body {
+  background:#29213E;
+  color:#B1B7DA;
+  font-family: 'Orbitron', sans-serif;
 }
 
-.header{
-background:#29213E;
-color:#B1B7DA;
+.header {
+  background:#29213E;
+  color:#B1B7DA;
+  font-family: 'Orbitron', sans-serif;
 }
 
-.footer{
-background:#29213E;
-color:#B1B7DA;
+.message-container {
+  background:#29213E;
+  color:#B1B7DA;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.board-container {
+  background:#29213E;
+  color:#B1B7DA;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.footer {
+  background:#29213E;
+  color:#B1B7DA;
+  font-family: 'Orbitron', sans-serif;
+  border: 1px solid black;
 }
 
 .visible {
   display: block;
+  background:#29213E;
+  color:#B1B7DA;
   font-family: 'Orbitron', sans-serif;
+
 }
 
 .hidden {
@@ -26,9 +45,13 @@ color:#B1B7DA;
 }
 
 th, td, tr {
+  background:#29213E;
+  color:#B1B7DA;
   font-family: 'Orbitron', sans-serif;
-   border: 1px solid black;
-   padding: 15px;
-   text-align: left;
-   font-family: Helvetica;
+  font-size:70px;
+  height: 80px;
+  width: 80px;
+  border: 10px solid #B1B7DA;
+  padding: 7px;
+  text-align: center;
 }
