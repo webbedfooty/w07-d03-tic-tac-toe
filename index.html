@@ -10,16 +10,17 @@
   <audio src="http://www.moviesoundscentral.com/sounds/playgames.wav" autoplay>
     Your browser does not support the <code>audio</code> element.
   </audio>
+<div class="wrap">
 <header class="header">
   <br>
-  <h1>GLOBAL THERMONUCLEAR TIC TAC TOE</h1>
+    <h1>GLOBAL THERMONUCLEAR TIC TAC TOE</h1>
   <br>
 </header>
 
 
     <div class="reset-container">
-      <br>
       <a href="#" class="reset-button" id="reset-button">GAME RESET</a>
+      <br>
     </div>
 
 
@@ -27,39 +28,34 @@
     <div class="message-container">
       <div id="player-x-ready" class="visible">
           <br>
-        <p class="ready-message">PLAYER X, IT'S YOUR MOVE!</p>
+        <p class="ready-message">PLAYER  X , IT'S YOUR MOVE!</p>
           <br>
       </div>
       <div id="player-o-ready" class="hidden">
           <br>
-        <p class="ready-message">PLAYER O, IT'S YOUR MOVE!</p>
+        <p class="ready-message">PLAYER  O , IT'S YOUR MOVE!</p>
           <br>
       </div>
 
       <div id="player-x-wins" class="hidden">
         <br>
         <p class="outcome-message">PLAYER X WINS!</p>
-        <br>
         <p class="new-game" id="new-game-prompt">WANT TO PLAY AGAIN?</p>
-        <br>
       </div>
       <div id="player-o-wins" class="hidden">
         <br>
         <p class="outcome-message">PLAYER O WINS!</p>
-        <br>
         <p class="new-game" id="new-game-prompt">WANT TO PLAY AGAIN?</p>
-        <br>
       </div>
       <div id="tie-game" class="hidden">
         <br>
         <p class="outcome-message">STALEMATE.</p>
-        <br>
         <p class="new-game" id="new-game-prompt">WANT TO PLAY AGAIN?</p>
-        <br>
       </div>
+      <br>
     </div>
 
-    <article class="board-container">
+    <div class="board-container">
       <table class="board" id="game-board">
         <tr>
           <td class="board-tile row-1 col-1" id="tile-1-1">1</td>
@@ -78,23 +74,26 @@
             <br>
         </tr>
       </table>
-    </article>
+    </div>
 
-    <aside class="game-log-container">
+    <div class="game-log-container">
         <br>
-      <h2 class="game-log-header">OUTCOMES</h2>
-      <ol class="game-log-list" id="game-log">
-
+      <h2 class="game-log-header">OUTCOMES:</h2>
+        <ol class="game-log-list" id="game-log">
+        <br>
       </ol>
-    </aside>
-  </div>
+      <br>
+    </div>
 
-<footer>
+
+
   <div class="player-scores-container">
-    <p class="score">PLAYER X SCORE: <span id="x-score">0</span></p>
-    <p class="score">PLAYER O SCORE: <span id="o-score">0</span></p>
-    <p class="score">STALEMATES: <span id="c-score">0</span></p>
+    <br>
+    <p class="score">PLAYER  X  SCORE: <span id="x-score">0</span></p>
+    <p class="score">PLAYER  O  SCORE: <span id="o-score">0</span></p>
+    <p class="score">TOTAL STALEMATES: <span id="c-score">0</span></p>
+    <br>
   </div>
-</footer>
+</div>
 </body>
 </html>

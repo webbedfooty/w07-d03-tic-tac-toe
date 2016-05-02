@@ -86,7 +86,7 @@ function checkWinner(){
     xScore++;
     scoreX = document.getElementById("x-score");
     scoreX.innerHTML=xScore;
-    alert("PLAYER X WINS!");
+//    alert("PLAYER X WINS!");
 // launches endGame process
     endGame();
 // adds an entry to the running Game Log
@@ -113,7 +113,7 @@ function checkWinner(){
     oScore++;
     scoreO = document.getElementById("o-score");
     scoreO.innerHTML=oScore;
-    alert("PLAYER O WINS!");
+//    alert("PLAYER O WINS!");
 // launches endGame process
     endGame();
 // adds an entry to the running Game Log
@@ -131,7 +131,7 @@ function checkWinner(){
     cScore++;
     scoreC = document.getElementById("c-score");
     scoreC.innerHTML=cScore;
-    alert("STALEMATE");
+//    alert("STALEMATE");
 // launches endGame process
     endGame();
 // adds an entry to the running Game Log
@@ -152,7 +152,6 @@ function endGame(){
       squares[i].removeEventListener("click", changeSquare);
       squares[i].removeEventListener("click", changePlayerTurn);
     }
-
-
 }
+
 });

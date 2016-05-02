@@ -1,62 +1,92 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900);
 
 .body {
-  background-color: color:#29213E;
-  color:#B1B7DA;
+  background-color: color:#00000c;
+}
+
+.wrap {
+  background-color: color:#00000c;
+}
+
+.div {
+  background-color: color:#00000c;
+  color:#B0FDFF;
   font-family: 'Orbitron', sans-serif;
+  padding-left: 30px;
 }
 
 .header {
-  background:#29213E;
-  color:#B1B7DA;
+  background:#00000c;
+  color:#B0FDFF;
   font-family: 'Orbitron', sans-serif;
-  font-size:20px;
+  font-size:22px;
+  padding-left: 30px;
 }
 
 .reset-container {
-  background:#29213E;
-  color:#B1B7DA;
+  background:#00000c;
+  color:#B0FDFF;
   font-family: 'Orbitron', sans-serif;
+  padding-left: 30px;
 }
 
 .message-container {
-  background:#29213E;
-  color:#B1B7DA;
+  background:#00000c;
+  color:#B0FDFF;
   font-family: 'Orbitron', sans-serif;
   font-size:20px;
 }
 
 .board-container {
-  background:#29213E;
-  color:#B1B7DA;
+  background:#00000c;
+  color:#B0FDFF;
   font-family: 'Orbitron', sans-serif;
+  padding-left: 30px;
 }
 
 .game-log-container {
-  background:#29213E;
-  color:#B1B7DA;
+  background:#00000c;
+  color:#B0FDFF;
   font-family: 'Orbitron', sans-serif;
+  padding-left: 30px;
 }
 
 .player-scores-container{
-  background:#29213E;
-  color:#B1B7DA;
+  background:#00000c;
+  color:#B0FDFF;
   font-family: 'Orbitron', sans-serif;
+  padding-left: 30px;
+}
+
+.article {
+  background:#00000c;
+  color:#B0FDFF;
+  font-family: 'Orbitron', sans-serif;
+  width: 200px;
+  float:left;
+}
+
+.aside {
+  background-color: color:#00000c;
+  color:#B0FDFF;
+  font-family: 'Orbitron', sans-serif;
+  width: 80px;
+  float:right;
 }
 
 .footer {
-  background:#29213E;
-  color:#B1B7DA;
+  background:#00000c;
+  color:#B0FDFF;
   font-family: 'Orbitron', sans-serif;
-  border: 1px solid black;
+  padding-left: 30px;
 }
 
 .visible {
   display: block;
-  background:#29213E;
-  color:#B1B7DA;
+  background:#00000c;
+  color:#B0FDFF;
   font-family: 'Orbitron', sans-serif;
-
+  padding-left: 30px;
 }
 
 .hidden {
@@ -74,7 +104,6 @@
   padding-bottom: 5px;
 }
 
-
 .row-2 {
   border-top-style: solid;
   border-bottom-style: solid;
@@ -87,8 +116,6 @@
   padding-top: 15px;
   padding-bottom: 5px;
 }
-
-
 
 .col-2 {
   border-right-style: solid;
