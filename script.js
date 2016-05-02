@@ -1,4 +1,6 @@
-window.addEventListener("load", function() {
+window.addEventListener("load", playGame);
+
+function playGame() {
 
   var squares = document.getElementsByClassName("board-tile");
 // sets EventListeners on all 9 squares
@@ -154,4 +156,39 @@ function endGame(){
     }
 }
 
-});
+var newStart = document.getElementsByClassName("new-game");
+for(var i = 0; i < newGame.length; i++){
+  newStart[i].addEventListener("click", newGame);
+};
+
+var reset = document.getElementById("reset-button");
+for(var i = 0; i < newGame.length; i++){
+  reset[i].addEventListener("click", reset);
+};
+
+}
+function newGame(){
+//   var squares = document.getElementsByClassName("board-tile");
+// // sets EventListeners on all 9 squares
+//   for(var i = 0; i < squares.length; i++){
+//     squares[i].addEventListener("click", changeSquare);
+//     squares[i].addEventListener("click", changePlayerTurn);
+//   }
+// starting variables
+  var moveCounter = 0;
+  var totalMoves = 9;
+  var winner;
+  playGame();
+}
+
+function reset() {
+  var playerTurn = "X";
+  var moveCounter = 0;
+  var totalMoves = 9;
+  var xScore = 0;
+  var oScore = 0;
+  var cScore = 0;
+  var winner;
+  playGame();
+
+}

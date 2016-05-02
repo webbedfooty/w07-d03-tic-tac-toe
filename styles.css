@@ -58,29 +58,6 @@
   padding-left: 30px;
 }
 
-.article {
-  background:#00000c;
-  color:#B0FDFF;
-  font-family: 'Orbitron', sans-serif;
-  width: 200px;
-  float:left;
-}
-
-.aside {
-  background-color: color:#00000c;
-  color:#B0FDFF;
-  font-family: 'Orbitron', sans-serif;
-  width: 80px;
-  float:right;
-}
-
-.footer {
-  background:#00000c;
-  color:#B0FDFF;
-  font-family: 'Orbitron', sans-serif;
-  padding-left: 30px;
-}
-
 .visible {
   display: block;
   background:#00000c;
