@@ -2,15 +2,15 @@ window.addEventListener("load", playGame);
 
 function playGame() {
 
-  var newStart = document.getElementsByClassName("new-game");
-  for(var i = 0; i < newStart.length; i++){
-    newStart[i].addEventListener("click", newGame);
-  }
-
-  var reset = document.getElementById("reset-button");
-  for(var i = 0; i < reset.length; i++){
-    reset[i].addEventListener("click", reset);
-  }
+  // var newStart = document.getElementsByClassName("new-game");
+  // for(var i = 0; i < newStart.length; i++){
+  //   newStart[i].addEventListener("click", newGame);
+  // }
+  //
+  // var reset = document.getElementById("reset-button");
+  // for(var i = 0; i < reset.length; i++){
+  //   reset[i].addEventListener("click", reset);
+  // }
 
   var squares = document.getElementsByClassName("board-tile");
 // sets EventListeners on all 9 squares and clears the board
@@ -19,6 +19,7 @@ function playGame() {
     squares[i].addEventListener("click", changePlayerTurn);
     squares[i].innerHTML="";
   }
+
 // starting variables
   var playerTurn = "X";
   var moveCounter = 0;
@@ -28,35 +29,35 @@ function playGame() {
   var cScore = 0;
   var winner;
 
-  function reset() {
-    var squares = document.getElementsByClassName("board-tile");
-    for(var i = 0; i < squares.length; i++){
-    squares[i].addEventListener("click", changeSquare);
-    squares[i].addEventListener("click", changePlayerTurn);
-    squares[i].innerHTML="";
-    }
-    var scores = document.getElementsByClassName("score");
-    for(var i = 0; i < scores.length; i++){
-    scores[i].innerHTML="";
-    }
-    var gameLog = document.getElementsByClassName("game-log-list");
-    for(var i = 0; i < gameLog.length; i++){
-    gameLog[i].innerHTML="";
-    }
-    var result = document.getElementsByClassName("outcome-message");
-    for(var i = 0; i < result.length; i++){
-    result[i].setAttribute("class", "hidden");
-    }
+  // function reset() {
+  //   var squares = document.getElementsByClassName("board-tile");
+  //   for(var i = 0; i < squares.length; i++){
+  //   squares[i].addEventListener("click", changeSquare);
+  //   squares[i].addEventListener("click", changePlayerTurn);
+  //   squares[i].innerHTML="";
+  //   }
+  //   var scores = document.getElementsByClassName("score");
+  //   for(var i = 0; i < scores.length; i++){
+  //   scores[i].innerHTML="";
+  //   }
+  //   var gameLog = document.getElementsByClassName("game-log-list");
+  //   for(var i = 0; i < gameLog.length; i++){
+  //   gameLog[i].innerHTML="";
+  //   }
+  //   var result = document.getElementsByClassName("outcome-message");
+  //   for(var i = 0; i < result.length; i++){
+  //   result[i].setAttribute("class", "hidden");
+    //
+    //
+    // var moveCounter = 0;
+    // var totalMoves = 9;
+    // var xScore = 0;
+    // var oScore = 0;
+    // var cScore = 0;
+    // var winner;
+    // playGame();
+  //   }
 
-    var moveCounter = 0;
-    var totalMoves = 9;
-    var xScore = 0;
-    var oScore = 0;
-    var cScore = 0;
-    var winner;
-    playGame();
-
-  }
 
   function changePlayerTurn() {
     if(playerTurn === "X"){
@@ -133,14 +134,13 @@ function playGame() {
       scoreX.innerHTML=xScore;
 //    alert("PLAYER X WINS!");
 // launches endGame process
-      endGame();
 // adds an entry to the running Game Log
       var para = document.createElement("li");
       var node = document.createTextNode("PLAYER X WINS!");
       para.appendChild(node);
       var element = document.getElementById("game-log");
       element.appendChild(para);
-
+      endGame();
 // examines the 8 winning combinations to see if O has won
     }else if((tile11 === "O" && tile12 === "O" && tile13 === "O") ||
       (tile21 === "O" && tile22 === "O" && tile23 === "O") ||
@@ -161,13 +161,13 @@ function playGame() {
       scoreO.innerHTML=oScore;
 //    alert("PLAYER O WINS!");
 // launches endGame process
-      endGame();
 // adds an entry to the running Game Log
       var para = document.createElement("li");
       var node = document.createTextNode("PLAYER O WINS!");
       para.appendChild(node);
       var element = document.getElementById("game-log");
       element.appendChild(para);
+      endGame();
 // if a 9 moves have been made and no winner is declared, it is a tie
 
     }else if((moveCounter === 9) && (winner === undefined)){
@@ -180,13 +180,13 @@ function playGame() {
       scoreC.innerHTML=cScore;
 //    alert("STALEMATE");
 // launches endGame process
-      endGame();
 // adds an entry to the running Game Log
       var para = document.createElement("li");
       var node = document.createTextNode("STALEMATE.");
       para.appendChild(node);
       var element = document.getElementById("game-log");
       element.appendChild(para);
+      endGame();
     }
   }
 // endGame procedure to hide messages and turn off all EventListeners
@@ -198,20 +198,19 @@ function playGame() {
       for(var i = 0; i < squares.length; i++){
         squares[i].removeEventListener("click", changeSquare);
         squares[i].removeEventListener("click", changePlayerTurn);
+        changePlayerTurn();
       }
 
   }
-
-  function newGame(){
-    var result = document.getElementsByClassName("outcome-message");
-    for(var i = 0; i < result.length; i++){
-    result[i].setAttribute("class", "hidden");
-    }
-// preps the next game with change in player starting the game
-    changePlayerTurn();
+//   function newGame(){
+//     var result = document.getElementsByClassName("outcome-message");
+//     for(var i = 0; i < result.length; i++){
+//     result[i].setAttribute("class", "hidden");
+//     }
+// // preps the next game with change in player starting the game
+//     changePlayerTurn();
 // starting variables
     var moveCounter = 0;
     var totalMoves = 9;
     playGame();
-  }
 };
