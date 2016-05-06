@@ -13,7 +13,7 @@ function playGame() {
   }
 
   var squares = document.getElementsByClassName("board-tile");
-// sets EventListeners on all 9 squares
+// sets EventListeners on all 9 squares and clears the board
   for(var i = 0; i < squares.length; i++){
     squares[i].addEventListener("click", changeSquare);
     squares[i].addEventListener("click", changePlayerTurn);
@@ -43,7 +43,6 @@ function playGame() {
     for(var i = 0; i < gameLog.length; i++){
     gameLog[i].innerHTML="";
     }
-
     var result = document.getElementsByClassName("outcome-message");
     for(var i = 0; i < result.length; i++){
     result[i].setAttribute("class", "hidden");
@@ -64,7 +63,7 @@ function playGame() {
 // hides x-ready message
       elementX = document.getElementById("player-x-ready");
       elementX.setAttribute("class", "hidden");
-// makes x-ready message visible
+// makes o-ready message visible
       elementO = document.getElementById("player-o-ready");
       elementO.setAttribute("class", "visible");
 // turns off changePlayerTurn Event Listener
@@ -112,7 +111,9 @@ function playGame() {
     var tile31=document.getElementById("tile-3-1").innerHTML;
     var tile32=document.getElementById("tile-3-2").innerHTML;
     var tile33=document.getElementById("tile-3-3").innerHTML;
+
 // examines the 8 winning combinations to see if X has won
+
     if((tile11 === "X" && tile12 === "X" && tile13 === "X") ||
        (tile21 === "X" && tile22 === "X" && tile23 === "X") ||
        (tile31 === "X" && tile32 === "X" && tile33 === "X") ||
@@ -127,7 +128,7 @@ function playGame() {
       elementX = document.getElementById("player-x-ready");
       elementX.setAttribute("class", "hidden");
 // increments X score and updates the visible html code
-      xScore++;
+//      xScore++;
       scoreX = document.getElementById("x-score");
       scoreX.innerHTML=xScore;
 //    alert("PLAYER X WINS!");
@@ -139,6 +140,7 @@ function playGame() {
       para.appendChild(node);
       var element = document.getElementById("game-log");
       element.appendChild(para);
+
 // examines the 8 winning combinations to see if O has won
     }else if((tile11 === "O" && tile12 === "O" && tile13 === "O") ||
       (tile21 === "O" && tile22 === "O" && tile23 === "O") ||
@@ -154,7 +156,7 @@ function playGame() {
       elementO = document.getElementById("player-o-ready");
       elementO.setAttribute("class", "hidden");
 // increments O score and updates the visible html code
-      oScore++;
+//      oScore++;
       scoreO = document.getElementById("o-score");
       scoreO.innerHTML=oScore;
 //    alert("PLAYER O WINS!");
@@ -167,12 +169,13 @@ function playGame() {
       var element = document.getElementById("game-log");
       element.appendChild(para);
 // if a 9 moves have been made and no winner is declared, it is a tie
+
     }else if((moveCounter === 9) && (winner === undefined)){
 // makes Tie game message visible
       elC = document.getElementById("tie-game");
       elC.setAttribute("class", "visible");
 // increments Cat score and updates the visible html code
-      cScore++;
+//      cScore++;
       scoreC = document.getElementById("c-score");
       scoreC.innerHTML=cScore;
 //    alert("STALEMATE");
