@@ -2,9 +2,9 @@ window.addEventListener("load", playGame);
 
 function playGame() {
 
-  var newStart = document.getElementsByClassName("new-game");
-  for(var i = 0; i < newStart.length; i++){
-    newStart[i].addEventListener("click", newGame);
+  var newGame = document.getElementsByClassName("new-game");
+  for(var i = 0; i < newGame.length; i++){
+    newGame[i].addEventListener("click", newGame);
   }
 
   var reset = document.getElementById("reset-button");
@@ -44,6 +44,10 @@ function playGame() {
     gameLog[i].innerHTML="";
     }
     var result = document.getElementsByClassName("outcome-message");
+    for(var i = 0; i < result.length; i++){
+    result[i].setAttribute("class", "hidden");
+    }
+    var result = document.getElementByClassId("new-game-prompt");
     for(var i = 0; i < result.length; i++){
     result[i].setAttribute("class", "hidden");
     }
@@ -199,11 +203,15 @@ function playGame() {
         squares[i].removeEventListener("click", changeSquare);
         squares[i].removeEventListener("click", changePlayerTurn);
       }
-
+      newGame()
   }
 
   function newGame(){
     var result = document.getElementsByClassName("outcome-message");
+    for(var i = 0; i < result.length; i++){
+    result[i].setAttribute("class", "hidden");
+    }
+    var result = document.getElementByClassId("new-game-prompt");
     for(var i = 0; i < result.length; i++){
     result[i].setAttribute("class", "hidden");
     }
