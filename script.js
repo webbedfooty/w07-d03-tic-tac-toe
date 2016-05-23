@@ -158,22 +158,23 @@ function endGame(){
   for(var i = 0; i < squares.length; i++){
     squares[i].removeEventListener("click", changeSquare);
   }
-  newGame()
+  // newGame()
 };
 
 function newGame(){
   var result = document.getElementsByClassName("outcome-message");
   for(var i = 0; i < result.length; i++){
-  result[i].setAttribute("class", "hidden");
+    result[i].setAttribute("class", "hidden");
   }
-  var result = document.getElementById("new-game-prompt");
+  var result = document.getElementsByClassName("new-game");
   for(var i = 0; i < result.length; i++){
-  result[i].setAttribute("class", "hidden");
+    result[i].setAttribute("class", "hidden");
+    console.log("Adding a new game event listener");
   }
   var squares = document.getElementsByClassName("board-tile");
   for(var i = 0; i < squares.length; i++){
-  squares[i].addEventListener("click", changeSquare);
-  squares[i].innerHTML="";
+    squares[i].addEventListener("click", changeSquare);
+    squares[i].innerHTML="";
   }
   moveCounter = 0;
 
