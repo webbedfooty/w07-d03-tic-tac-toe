@@ -1,3 +1,12 @@
+// starting variables
+  var playerTurn = "X";
+  var moveCounter = 0;
+  var totalMoves = 9;
+  var xScore = 0;
+  var oScore = 0;
+  var cScore = 0;
+  var winner;
+
 window.addEventListener("load", playGame);
 
 function playGame() {
@@ -19,48 +28,10 @@ function playGame() {
     squares[i].addEventListener("click", changePlayerTurn);
     squares[i].innerHTML="";
   }
-// starting variables
-  var playerTurn = "X";
+// reset variables
   var moveCounter = 0;
-  var totalMoves = 9;
-  var xScore = 0;
-  var oScore = 0;
-  var cScore = 0;
   var winner;
 
-  function reset() {
-    var squares = document.getElementsByClassName("board-tile");
-    for(var i = 0; i < squares.length; i++){
-    squares[i].addEventListener("click", changeSquare);
-    squares[i].addEventListener("click", changePlayerTurn);
-    squares[i].innerHTML="";
-    }
-    var scores = document.getElementsByClassName("score");
-    for(var i = 0; i < scores.length; i++){
-    scores[i].innerHTML="";
-    }
-    var gameLog = document.getElementsByClassName("game-log-list");
-    for(var i = 0; i < gameLog.length; i++){
-    gameLog[i].innerHTML="";
-    }
-    var result = document.getElementsByClassName("outcome-message");
-    for(var i = 0; i < result.length; i++){
-    result[i].setAttribute("class", "hidden");
-    }
-    var result = document.getElementByClassId("new-game-prompt");
-    for(var i = 0; i < result.length; i++){
-    result[i].setAttribute("class", "hidden");
-    }
-
-    var moveCounter = 0;
-    var totalMoves = 9;
-    var xScore = 0;
-    var oScore = 0;
-    var cScore = 0;
-    var winner;
-    playGame();
-
-  }
 
   function changePlayerTurn() {
     if(playerTurn === "X"){
@@ -132,18 +103,17 @@ function playGame() {
       elementX = document.getElementById("player-x-ready");
       elementX.setAttribute("class", "hidden");
 // increments X score and updates the visible html code
-//      xScore++;
+      xScore++;
       scoreX = document.getElementById("x-score");
       scoreX.innerHTML=xScore;
-//    alert("PLAYER X WINS!");
-// launches endGame process
-      endGame();
 // adds an entry to the running Game Log
       var para = document.createElement("li");
       var node = document.createTextNode("PLAYER X WINS!");
       para.appendChild(node);
       var element = document.getElementById("game-log");
       element.appendChild(para);
+// launches endGame process
+      endGame();
 
 // examines the 8 winning combinations to see if O has won
     }else if((tile11 === "O" && tile12 === "O" && tile13 === "O") ||
@@ -160,18 +130,18 @@ function playGame() {
       elementO = document.getElementById("player-o-ready");
       elementO.setAttribute("class", "hidden");
 // increments O score and updates the visible html code
-//      oScore++;
+      oScore++;
       scoreO = document.getElementById("o-score");
       scoreO.innerHTML=oScore;
-//    alert("PLAYER O WINS!");
-// launches endGame process
-      endGame();
 // adds an entry to the running Game Log
       var para = document.createElement("li");
       var node = document.createTextNode("PLAYER O WINS!");
       para.appendChild(node);
       var element = document.getElementById("game-log");
       element.appendChild(para);
+// launches endGame process
+      endGame();
+
 // if a 9 moves have been made and no winner is declared, it is a tie
 
     }else if((moveCounter === 9) && (winner === undefined)){
@@ -179,47 +149,85 @@ function playGame() {
       elC = document.getElementById("tie-game");
       elC.setAttribute("class", "visible");
 // increments Cat score and updates the visible html code
-//      cScore++;
+      cScore++;
       scoreC = document.getElementById("c-score");
       scoreC.innerHTML=cScore;
-//    alert("STALEMATE");
-// launches endGame process
-      endGame();
 // adds an entry to the running Game Log
       var para = document.createElement("li");
       var node = document.createTextNode("STALEMATE.");
       para.appendChild(node);
       var element = document.getElementById("game-log");
       element.appendChild(para);
+// launches endGame process
+      endGame();
     }
   }
+};
 // endGame procedure to hide messages and turn off all EventListeners
-  function endGame(){
-    elementX = document.getElementById("player-x-ready");
-    elementX.setAttribute("class", "hidden");
-    elementO = document.getElementById("player-o-ready");
-    elementO.setAttribute("class", "hidden");
-      for(var i = 0; i < squares.length; i++){
-        squares[i].removeEventListener("click", changeSquare);
-        squares[i].removeEventListener("click", changePlayerTurn);
-      }
-      newGame()
+function endGame(){
+  elementX = document.getElementById("player-x-ready");
+  elementX.setAttribute("class", "hidden");
+  elementO = document.getElementById("player-o-ready");
+  elementO.setAttribute("class", "hidden");
+    var squares = document.getElementsByClassName("board-tile");
+    for(var i = 0; i < squares.length; i++){
+      squares[i].removeEventListener("click", changeSquare);
+      squares[i].removeEventListener("click", changePlayerTurn);
+    }
+    newGame()
+};
+
+function newGame(){
+  var result = document.getElementsByClassName("outcome-message");
+  for(var i = 0; i < result.length; i++){
+  result[i].setAttribute("class", "hidden");
+  }
+  var result = document.getElementByClassId("new-game-prompt");
+  for(var i = 0; i < result.length; i++){
+  result[i].setAttribute("class", "hidden");
+  }
+  var squares = document.getElementsByClassName("board-tile");
+  for(var i = 0; i < squares.length; i++){
+  squares[i].addEventListener("click", changeSquare);
+  squares[i].addEventListener("click", changePlayerTurn);
+  squares[i].innerHTML="";
+  }
+// preps the next game with change in player starting the game
+  changePlayerTurn();
+
+  playGame();
+};
+
+function reset() {
+  var squares = document.getElementsByClassName("board-tile");
+  for(var i = 0; i < squares.length; i++){
+  squares[i].addEventListener("click", changeSquare);
+  squares[i].addEventListener("click", changePlayerTurn);
+  squares[i].innerHTML="";
+  }
+  var scores = document.getElementsByClassName("score");
+  for(var i = 0; i < scores.length; i++){
+  scores[i].innerHTML="";
+  }
+  var gameLog = document.getElementsByClassName("game-log-list");
+  for(var i = 0; i < gameLog.length; i++){
+  gameLog[i].innerHTML="";
+  }
+  var result = document.getElementsByClassName("outcome-message");
+  for(var i = 0; i < result.length; i++){
+  result[i].setAttribute("class", "hidden");
+  }
+  var result = document.getElementByClassId("new-game-prompt");
+  for(var i = 0; i < result.length; i++){
+  result[i].setAttribute("class", "hidden");
   }
 
-  function newGame(){
-    var result = document.getElementsByClassName("outcome-message");
-    for(var i = 0; i < result.length; i++){
-    result[i].setAttribute("class", "hidden");
-    }
-    var result = document.getElementByClassId("new-game-prompt");
-    for(var i = 0; i < result.length; i++){
-    result[i].setAttribute("class", "hidden");
-    }
-// preps the next game with change in player starting the game
-    changePlayerTurn();
-// starting variables
-    var moveCounter = 0;
-    var totalMoves = 9;
-    playGame();
-  }
+  var moveCounter = 0;
+  var totalMoves = 9;
+  var xScore = 0;
+  var oScore = 0;
+  var cScore = 0;
+  var winner;
+  playGame();
+
 };
