@@ -1,13 +1,18 @@
 // starting variables
-  var playerTurn = "X";
-  var moveCounter = 0;
-  var totalMoves = 9;
-  var xScore = 0;
-  var oScore = 0;
-  var cScore = 0;
-  var winner;
+var playerTurn = "X";
+var moveCounter = 0;
+var totalMoves = 9;
+var xScore = 0;
+var oScore = 0;
+var cScore = 0;
+var winner;
 
 window.addEventListener("load", playGame);
+
+// function setUpGame() {
+//
+//
+// }
 
 function playGame() {
 
@@ -33,46 +38,6 @@ function playGame() {
   var winner;
 
 
-  function changePlayerTurn() {
-    if(playerTurn === "X"){
-// hides x-ready message
-      elementX = document.getElementById("player-x-ready");
-      elementX.setAttribute("class", "hidden");
-// makes o-ready message visible
-      elementO = document.getElementById("player-o-ready");
-      elementO.setAttribute("class", "visible");
-// turns off changePlayerTurn Event Listener
-      this.removeEventListener("click", changePlayerTurn);
-      playerTurn = "O";
-    }else {
-// hides o-ready message
-      elementO = document.getElementById("player-o-ready");
-      elementO.setAttribute("class", "hidden");
-// makes x-ready message visible
-      elementX = document.getElementById("player-x-ready");
-      elementX.setAttribute("class", "visible");
-// turns off changePlayerTurn Event Listener
-      this.removeEventListener("click", changePlayerTurn);
-      playerTurn = "X";
-    }
-// adds 1 to the moveCounter
-      moveCounter++;
-// you can only have a winner after a minimum of 5 moves
-// so this does not check for a winner until the 5th move
-    if(moveCounter > 4) {
-      checkWinner();
-    }
-  }
-// this changes the value of the square and turns of the EventListener
-  function changeSquare() {
-    if(playerTurn === "X"){
-        this.innerHTML="X";
-        this.removeEventListener("click", changeSquare);
-
-      }else {
-        this.innerHTML="O";
-        this.removeEventListener("click", changeSquare);
-    }
   }
 
   function checkWinner(){
@@ -161,8 +126,38 @@ function playGame() {
 // launches endGame process
       endGame();
     }
-  }
 };
+
+function changePlayerTurn() {
+  if(playerTurn === "X"){
+// hides x-ready message
+    elementX = document.getElementById("player-x-ready");
+    elementX.setAttribute("class", "hidden");
+// makes o-ready message visible
+    elementO = document.getElementById("player-o-ready");
+    elementO.setAttribute("class", "visible");
+// turns off changePlayerTurn Event Listener
+    this.removeEventListener("click", changePlayerTurn);
+    playerTurn = "O";
+  }else {
+// hides o-ready message
+    elementO = document.getElementById("player-o-ready");
+    elementO.setAttribute("class", "hidden");
+// makes x-ready message visible
+    elementX = document.getElementById("player-x-ready");
+    elementX.setAttribute("class", "visible");
+// turns off changePlayerTurn Event Listener
+    this.removeEventListener("click", changePlayerTurn);
+    playerTurn = "X";
+  }
+// adds 1 to the moveCounter
+    moveCounter++;
+// you can only have a winner after a minimum of 5 moves
+// so this does not check for a winner until the 5th move
+  if(moveCounter > 4) {
+    checkWinner();
+  }
+
 // endGame procedure to hide messages and turn off all EventListeners
 function endGame(){
   elementX = document.getElementById("player-x-ready");
@@ -182,7 +177,7 @@ function newGame(){
   for(var i = 0; i < result.length; i++){
   result[i].setAttribute("class", "hidden");
   }
-  var result = document.getElementByClassId("new-game-prompt");
+  var result = document.getElementById("new-game-prompt");
   for(var i = 0; i < result.length; i++){
   result[i].setAttribute("class", "hidden");
   }
@@ -197,6 +192,18 @@ function newGame(){
 
   playGame();
 };
+
+// this changes the value of the square and turns of the EventListener
+  function changeSquare() {
+    if(playerTurn === "X"){
+        this.innerHTML="X";
+        this.removeEventListener("click", changeSquare);
+
+      }else {
+        this.innerHTML="O";
+        this.removeEventListener("click", changeSquare);
+    }
+  }
 
 function reset() {
   var squares = document.getElementsByClassName("board-tile");
@@ -217,7 +224,7 @@ function reset() {
   for(var i = 0; i < result.length; i++){
   result[i].setAttribute("class", "hidden");
   }
-  var result = document.getElementByClassId("new-game-prompt");
+  var result = document.getElementById("new-game-prompt");
   for(var i = 0; i < result.length; i++){
   result[i].setAttribute("class", "hidden");
   }
@@ -228,6 +235,4 @@ function reset() {
   var oScore = 0;
   var cScore = 0;
   var winner;
-  playGame();
-
-};
+  playGame()
