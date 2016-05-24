@@ -16,12 +16,12 @@
     <h1>GLOBAL THERMONUCLEAR TIC TAC TOE</h1>
   <br>
 </header>
-
+<!-- GAME RESET -->
     <div class="reset-container">
       <a href="#" class="reset-button" id="reset-button">GAME RESET</a>
       <br>
     </div>
-
+<!-- PLAYER MOVE -->
     <div class="message-container">
       <div id="player-x-ready" class="visible">
           <br>
@@ -33,25 +33,27 @@
         <p class="ready-message">PLAYER  O , IT'S YOUR MOVE!</p>
           <br>
       </div>
-
+<!-- DECLARE WINNER -->
       <div id="player-x-wins" class="hidden">
         <br>
         <p class="outcome-message">PLAYER X WINS!</p>
-        <a href="#" class="new-game" id="new-game-prompt">WANT TO PLAY AGAIN?</a>
       </div>
       <div id="player-o-wins" class="hidden">
         <br>
         <p class="outcome-message">PLAYER O WINS!</p>
-        <a href="#" class="new-game" id="new-game-prompt">WANT TO PLAY AGAIN?</a>
       </div>
       <div id="tie-game" class="hidden">
         <br>
         <p class="outcome-message">STALEMATE.</p>
-        <a href="#" class="new-game" id="new-game-prompt">WANT TO PLAY AGAIN?</a>
+      </div>
+<!-- PLAY AGAIN -->
+      <div>
+        <br>
+        <a href="#" class="new-game hidden" id="new-game-prompt">WANT TO PLAY AGAIN?</a>
       </div>
       <br>
     </div>
-
+<!-- BOARD -->
     <div class="board-container">
       <table class="board" id="game-board">
         <tr>
@@ -72,7 +74,7 @@
         </tr>
       </table>
     </div>
-
+<!-- OUTCOMES LOG -->
     <div class="game-log-container">
         <br>
       <h2 class="game-log-header">OUTCOMES:</h2>
@@ -81,7 +83,7 @@
       </ol>
       <br>
     </div>
-
+<!-- SCOREBOARD -->
   <div class="player-scores-container">
     <br>
     <p class="score">PLAYER  X  SCORE: <span id="x-score">0</span></p>
