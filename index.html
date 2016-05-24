@@ -16,6 +16,10 @@
     <h1>GLOBAL THERMONUCLEAR TIC TAC TOE</h1>
   <br>
 </header>
+
+<div class="container">
+  <div class="left">
+
 <!-- GAME RESET -->
     <div class="reset-container">
       <a href="#" class="reset-button" id="reset-button">GAME RESET</a>
@@ -49,7 +53,7 @@
 <!-- PLAY AGAIN -->
       <div>
         <br>
-        <a href="#" class="new-game hidden" id="new-game-prompt">WANT TO PLAY AGAIN?</a>
+        <a href="#" class="hidden" id="new-game">WANT TO PLAY AGAIN?</a>
       </div>
       <br>
     </div>
@@ -74,22 +78,27 @@
         </tr>
       </table>
     </div>
-<!-- OUTCOMES LOG -->
-    <div class="game-log-container">
+</div>
+
+  <div class="right">
+    <!-- OUTCOMES LOG -->
+        <div class="game-log-container">
+            <br>
+          <h2 class="game-log-header">OUTCOMES:</h2>
+            <ol class="game-log-list" id="game-log">
+            <br>
+          </ol>
+          <br>
+        </div>
+    <!-- SCOREBOARD -->
+      <div class="player-scores-container">
         <br>
-      <h2 class="game-log-header">OUTCOMES:</h2>
-        <ol class="game-log-list" id="game-log">
+        <p class="score">PLAYER  X  SCORE: <span id="x-score">0</span></p>
+        <p class="score">PLAYER  O  SCORE: <span id="o-score">0</span></p>
+        <p class="score">TOTAL STALEMATES: <span id="c-score">0</span></p>
         <br>
-      </ol>
-      <br>
+      </div>
     </div>
-<!-- SCOREBOARD -->
-  <div class="player-scores-container">
-    <br>
-    <p class="score">PLAYER  X  SCORE: <span id="x-score">0</span></p>
-    <p class="score">PLAYER  O  SCORE: <span id="o-score">0</span></p>
-    <p class="score">TOTAL STALEMATES: <span id="c-score">0</span></p>
-    <br>
   </div>
 </div>
 </body>

@@ -10,7 +10,7 @@ var winner;
 window.addEventListener("load", playGame);
 
 function playGame() {
-  var newGame = document.getElementsByClassName("new-game");
+  var newGame = document.getElementById("new-game");
   for(var i = 0; i < newGame.length; i++){
     newGame[i].addEventListener("click", newGame);
   }
@@ -35,9 +35,11 @@ function changeSquare() {
   if(playerTurn === "X"){
     this.innerHTML="X";
     this.removeEventListener("click", changeSquare);
+    this.removeEventListener("click", changePlayerTurn);
   } else {
     this.innerHTML="O";
     this.removeEventListener("click", changeSquare);
+    this.removeEventListener("click", changePlayerTurn);
   }
   changePlayerTurn();
 }
@@ -108,6 +110,10 @@ function checkWinner(){
     var element = document.getElementById("game-log");
     element.appendChild(para);
 // launches endGame process
+var result = document.getElementById("new-game");
+for(var i = 0; i < result.length; i++){
+  result[i].setAttribute("class", "visible");
+}
     endGame();
 
 // examines the 8 winning combinations to see if O has won
@@ -135,6 +141,10 @@ function checkWinner(){
     var element = document.getElementById("game-log");
     element.appendChild(para);
 // launches endGame process
+var result = document.getElementById("new-game");
+for(var i = 0; i < result.length; i++){
+  result[i].setAttribute("class", "visible");
+}
     endGame();
 
 // if a 9 moves have been made and no winner is declared, it is a tie
@@ -154,16 +164,21 @@ function checkWinner(){
     var element = document.getElementById("game-log");
     element.appendChild(para);
 // launches endGame process
+var result = document.getElementById("new-game");
+for(var i = 0; i < result.length; i++){
+  result[i].setAttribute("class", "visible");
+}
     endGame();
   }
 }
 
 
-// endGame procedure to hide messages and turn off all EventListeners
+// END GAME     //////////////////////////
 function endGame(){
-  var result = document.getElementsByClassName("new-game");
+  var result = document.getElementById("new-game");
   for(var i = 0; i < result.length; i++){
-    result[i].setAttribute("class", "hidden");
+    result[i].setAttribute("class", "visible");
+  }
   elementX = document.getElementById("player-x-ready");
   elementX.setAttribute("class", "hidden");
   elementO = document.getElementById("player-o-ready");
@@ -171,17 +186,27 @@ function endGame(){
   var squares = document.getElementsByClassName("board-tile");
   for(var i = 0; i < squares.length; i++){
     squares[i].removeEventListener("click", changeSquare);
+    squares[i].removeEventListener("click", changePlayerTurn);
   }
-   newGame();
 }
+
 
 // NEW GAME     //////////////////////////
 function newGame(){
+
+  elementX = document.getElementById("player-x-ready");
+  elementX.setAttribute("class", "hidden");
+  elementO = document.getElementById("player-o-ready");
+  elementO.setAttribute("class", "hidden");
+  var squares = document.getElementsByClassName("board-tile");
+  for(var i = 0; i < squares.length; i++){
+    squares[i].removeEventListener("click", changeSquare);
+
   var result = document.getElementsByClassName("outcome-message");
   for(var i = 0; i < result.length; i++){
     result[i].setAttribute("class", "hidden");
   }
-  var result = document.getElementsByClassName("new-game");
+  var result = document.getElementById("new-game");
   for(var i = 0; i < result.length; i++){
     result[i].setAttribute("class", "hidden");
   }
@@ -194,6 +219,7 @@ function newGame(){
   moveCounter = 0;
   playGame();
 }
+
 
 // GAME RESET      /////////////////////////
 function reset() {
@@ -215,7 +241,7 @@ function reset() {
   for(var i = 0; i < result.length; i++){
   result[i].setAttribute("class", "hidden");
   }
-  var result = document.getElementByClassId("new-game-prompt");
+  var result = document.getElementById("new-game");
   for(var i = 0; i < result.length; i++){
   result[i].setAttribute("class", "hidden");
   }
