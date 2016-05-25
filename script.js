@@ -193,11 +193,11 @@ function endGame(){
 
 // NEW GAME     //////////////////////////
 function newGame(){
+  // elementX = document.getElementById("player-x-ready");
+  // elementX.setAttribute("class", "hidden");
+  // elementO = document.getElementById("player-o-ready");
+  // elementO.setAttribute("class", "hidden");
 
-  elementX = document.getElementById("player-x-ready");
-  elementX.setAttribute("class", "hidden");
-  elementO = document.getElementById("player-o-ready");
-  elementO.setAttribute("class", "hidden");
   var squares = document.getElementsByClassName("board-tile");
   for(var i = 0; i < squares.length; i++){
     squares[i].removeEventListener("click", changeSquare);
