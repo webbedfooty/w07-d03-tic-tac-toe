@@ -2,23 +2,13 @@
 var playerTurn = "X";
 var moveCounter = 0;
 var totalMoves = 9;
-var xScore = 0;
-var oScore = 0;
-var cScore = 0;
 var winner;
+
+
 // GAME PROPER      //////////////////////
 window.addEventListener("load", playGame);
 
 function playGame() {
-  var newGame = document.getElementById("new-game");
-  for(var i = 0; i < newGame.length; i++){
-    newGame[i].addEventListener("click", newGame);
-  }
-
-  var reset = document.getElementById("reset-button");
-  for(var i = 0; i < reset.length; i++){
-    reset[i].addEventListener("click", reset);
-  }
 // sets EventListeners on all 9 squares and clears the board
   var squares = document.getElementsByClassName("board-tile");
   for(var i = 0; i < squares.length; i++){
@@ -71,7 +61,6 @@ function changePlayerTurn() {
     }
 }
 
-
 function checkWinner(){
 // assigns id tags to variables for future analysis
   var tile11=document.getElementById("tile-1-1").innerHTML;
@@ -99,21 +88,7 @@ function checkWinner(){
     elX.setAttribute("class", "visible");
     elementX = document.getElementById("player-x-ready");
     elementX.setAttribute("class", "hidden");
-// increments X score and updates the visible html code
-    xScore++;
-    scoreX = document.getElementById("x-score");
-    scoreX.innerHTML=xScore;
-// adds an entry to the running Game Log
-    var para = document.createElement("li");
-    var node = document.createTextNode("PLAYER X WINS!");
-    para.appendChild(node);
-    var element = document.getElementById("game-log");
-    element.appendChild(para);
-// launches endGame process
-var result = document.getElementById("new-game");
-for(var i = 0; i < result.length; i++){
-  result[i].setAttribute("class", "visible");
-}
+
     endGame();
 
 // examines the 8 winning combinations to see if O has won
@@ -130,21 +105,7 @@ for(var i = 0; i < result.length; i++){
     elO.setAttribute("class", "visible");
     elementO = document.getElementById("player-o-ready");
     elementO.setAttribute("class", "hidden");
-// increments O score and updates the visible html code
-    oScore++;
-    scoreO = document.getElementById("o-score");
-    scoreO.innerHTML=oScore;
-// adds an entry to the running Game Log
-    var para = document.createElement("li");
-    var node = document.createTextNode("PLAYER O WINS!");
-    para.appendChild(node);
-    var element = document.getElementById("game-log");
-    element.appendChild(para);
-// launches endGame process
-var result = document.getElementById("new-game");
-for(var i = 0; i < result.length; i++){
-  result[i].setAttribute("class", "visible");
-}
+
     endGame();
 
 // if a 9 moves have been made and no winner is declared, it is a tie
@@ -153,21 +114,7 @@ for(var i = 0; i < result.length; i++){
 // makes Tie game message visible
     elC = document.getElementById("tie-game");
     elC.setAttribute("class", "visible");
-// increments Cat score and updates the visible html code
-    cScore++;
-    scoreC = document.getElementById("c-score");
-    scoreC.innerHTML=cScore;
-// adds an entry to the running Game Log
-    var para = document.createElement("li");
-    var node = document.createTextNode("STALEMATE.");
-    para.appendChild(node);
-    var element = document.getElementById("game-log");
-    element.appendChild(para);
-// launches endGame process
-var result = document.getElementById("new-game");
-for(var i = 0; i < result.length; i++){
-  result[i].setAttribute("class", "visible");
-}
+
     endGame();
   }
 }
@@ -175,10 +122,8 @@ for(var i = 0; i < result.length; i++){
 
 // END GAME     //////////////////////////
 function endGame(){
-  var result = document.getElementById("new-game");
-  for(var i = 0; i < result.length; i++){
-    result[i].setAttribute("class", "visible");
-  }
+  elementZ = document.getElementById("new-game");
+  elementZ.setAttribute("class", "visible");
   elementX = document.getElementById("player-x-ready");
   elementX.setAttribute("class", "hidden");
   elementO = document.getElementById("player-o-ready");
@@ -189,69 +134,3 @@ function endGame(){
     squares[i].removeEventListener("click", changePlayerTurn);
   }
 }
-
-
-// NEW GAME     //////////////////////////
-function newGame(){
-  // elementX = document.getElementById("player-x-ready");
-  // elementX.setAttribute("class", "hidden");
-  // elementO = document.getElementById("player-o-ready");
-  // elementO.setAttribute("class", "hidden");
-
-  var squares = document.getElementsByClassName("board-tile");
-  for(var i = 0; i < squares.length; i++){
-    squares[i].removeEventListener("click", changeSquare);
-
-  var result = document.getElementsByClassName("outcome-message");
-  for(var i = 0; i < result.length; i++){
-    result[i].setAttribute("class", "hidden");
-  }
-  var result = document.getElementById("new-game");
-  for(var i = 0; i < result.length; i++){
-    result[i].setAttribute("class", "hidden");
-  }
-  var squares = document.getElementsByClassName("board-tile");
-  for(var i = 0; i < squares.length; i++){
-    squares[i].addEventListener("click", changeSquare);
-    squares[i].addEventListener("click", changePlayerTurn);
-    squares[i].innerHTML="";
-  }
-  moveCounter = 0;
-  playGame();
-}
-
-
-// GAME RESET      /////////////////////////
-function reset() {
-  var squares = document.getElementsByClassName("board-tile");
-  for(var i = 0; i < squares.length; i++){
-  squares[i].addEventListener("click", changeSquare);
-  squares[i].addEventListener("click", changePlayerTurn);
-  squares[i].innerHTML="";
-  }
-  var scores = document.getElementsByClassName("score");
-  for(var i = 0; i < scores.length; i++){
-  scores[i].innerHTML="";
-  }
-  var gameLog = document.getElementsByClassName("game-log-list");
-  for(var i = 0; i < gameLog.length; i++){
-  gameLog[i].innerHTML="";
-  }
-  var result = document.getElementsByClassName("outcome-message");
-  for(var i = 0; i < result.length; i++){
-  result[i].setAttribute("class", "hidden");
-  }
-  var result = document.getElementById("new-game");
-  for(var i = 0; i < result.length; i++){
-  result[i].setAttribute("class", "hidden");
-  }
-
-  var moveCounter = 0;
-  var totalMoves = 9;
-  var xScore = 0;
-  var oScore = 0;
-  var cScore = 0;
-  var winner;
-  playGame();
-  }
-};
